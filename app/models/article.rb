@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-	has_many :comments
+	has_many :comments, dependent: :destroy
 	has_many :taggings
 	has_many :tags, through: :taggings
 	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
@@ -14,9 +14,7 @@ class Article < ApplicationRecord
 		tags=tags_string.split(",")
 		tags = tags.collect{|t| t.strip.downcase}
 		tags = tags.uniq
-		tags.each do |t|
-			tmp= Tag.find_or_create_by(name: t)
-			self.tags.push(tmp)
-		end
+		self.tags =tags.collect{ |t| Tag.find_or_create_by(name: t) }
+	
 	end
 end
