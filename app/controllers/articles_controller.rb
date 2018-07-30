@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
 	
 	def show 
 		@article = Article.find(params[:id])
+		@article.increment_views
 		@comment = Comment.new
 		@comment.article_id = @article.id
 	end
@@ -40,5 +41,10 @@ class ArticlesController < ApplicationController
 		@article.destroy
 		flash.notice = "Article '#{@article.title}' Deleted!"
 		redirect_to articles_path
+	end
+
+	def most_popular
+		@articles = Article.most_popular
+		render "most_pop" 
 	end
 end

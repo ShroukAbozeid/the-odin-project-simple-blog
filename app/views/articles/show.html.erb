@@ -10,6 +10,7 @@
 	<% if @article.image.exists? %>
 	      <%= image_tag @article.image.url(:medium) %><br/>
 	<% end %> </p>
+<p> Views (<%= @article.views_count %>)</p>
 <p><%= @article.body%></p>
 <% if logged_in? && current_user.articles.include?(@article) %>
 	<%= link_to "edit", edit_article_path(@article) %>

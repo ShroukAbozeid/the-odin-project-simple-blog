@@ -2,6 +2,9 @@ Blogger::Application.routes.draw do
  	root to: 'articles#index'
   	resources :articles do
   		resources :comments
+  		 collection do
+    		get 'most_popular'
+  		end
   	end
   	resources :tags
   	resources :authors

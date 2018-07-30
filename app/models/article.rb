@@ -18,4 +18,12 @@ class Article < ApplicationRecord
 		self.tags =tags.collect{ |t| Tag.find_or_create_by(name: t) }
 	
 	end
+
+	def increment_views
+		self.increment!(:views_count)
+	end
+
+	def self.most_popular
+		Article.all.sort_by{ |i| i.views_count}.last(3)
+	end
 end
