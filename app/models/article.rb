@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
 	has_many :comments, dependent: :destroy
-	has_many :taggings
+	has_many :taggings, dependent: :destroy
 	has_many :tags, through: :taggings
 	belongs_to :author
 	has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
