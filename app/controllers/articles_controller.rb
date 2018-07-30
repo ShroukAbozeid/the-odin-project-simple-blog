@@ -1,17 +1,7 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
 	before_action :require_login, except: [:index, :show]
-=begin
-	before_action :auth_user, only: [:edit, :update, :destroy]
 
-	def auth_user
-		if current_user.articles.find(@article.id)
-			flash.notice = "Not your article"
-  			redirect_to article_path(@article)
-			return false
-		end
-	end
-=end
 	def index
 		@articles = Article.all
 	end
@@ -22,6 +12,7 @@ class ArticlesController < ApplicationController
 	
 	def create
 		@article = Article.new(article_params)
+		@article.author_id = current_user.id
   		@article.save
   		flash.notice = "Article '#{@article.title}' Created!"
   		redirect_to article_path(@article)
