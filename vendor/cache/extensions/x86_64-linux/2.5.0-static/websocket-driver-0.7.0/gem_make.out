@@ -1,0 +1,15 @@
+current directory: /media/shrouk/work/RubyLearning/environment/blogger/vendor/cache/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/shrouk/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180801-15905-748lz3.rb extconf.rb
+creating Makefile
+
+current directory: /media/shrouk/work/RubyLearning/environment/blogger/vendor/cache/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /media/shrouk/work/RubyLearning/environment/blogger/vendor/cache/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /media/shrouk/work/RubyLearning/environment/blogger/vendor/cache/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20180801-15905-1icbs7z
