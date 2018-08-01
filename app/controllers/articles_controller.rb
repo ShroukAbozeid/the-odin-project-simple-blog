@@ -47,4 +47,10 @@ class ArticlesController < ApplicationController
 		@articles = Article.most_popular
 		render "most_pop" 
 	end
+
+	def filter
+		@month = params[:month]
+		@articles = Article.filter_by_month(@month)
+		render "month"
+	end
 end

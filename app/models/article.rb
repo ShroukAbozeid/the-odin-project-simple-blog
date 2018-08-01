@@ -26,4 +26,9 @@ class Article < ApplicationRecord
 	def self.most_popular
 		Article.all.sort_by{ |i| i.views_count}.last(3)
 	end
+
+	def self.filter_by_month(month)
+		month =Date::MONTHNAMES.index(month)
+		Article.all.select{|a| a.created_at.month == month} 
+	end
 end

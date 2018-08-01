@@ -2,7 +2,7 @@ Blogger::Application.routes.draw do
  	root to: 'articles#index'
   	resources :articles do
   		resources :comments
-  		 collection do
+  		collection do
     		get 'most_popular'
   		end
   	end
@@ -12,6 +12,5 @@ Blogger::Application.routes.draw do
 
   	get 'login' => 'author_sessions#new'
   	get 'logout' => 'author_sessions#destory'
-
-
+    get 'articles/months/:month', to: 'articles#filter'
 end

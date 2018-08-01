@@ -1,5 +1,19 @@
 <h1>All Articles</h1>
+<%= link_to "Most Popular", most_popular_articles_path %>
 
 <%= render partial: 'showlist' %>
 
-<%= link_to "Most Popular", most_popular_articles_path %>
+
+<br /> 
+<%= link_to "Jan", controller: "articles", action: "filter", month: "January" %>
+<%= link_to "Feb", mocontroller: "articles", action: "filter", month: "February" %>
+<%= link_to "Mar", controller: "articles", action: "filter", month: "March" %>
+<%= link_to "Apr", controller: "articles", action: "filter", month: "April" %>
+<%= link_to "May", mocontroller: "articles", action: "filter", month: "May" %>
+<%= link_to "June", controller: "articles", action: "filter", month: "June" %>
+<%= link_to "July", controller: "articles", action: "filter", month: "July" %>
+<%= link_to "Aug", mocontroller: "articles", action: "filter", month: "August" %>
+<%= link_to "Sep", controller: "articles", action: "filter", month: "September" %>
+<%= link_to "Oct", controller: "articles", action: "filter", month: "October" %>
+<%= link_to "Nov", mocontroller: "articles", action: "filter", month: "November" %>
+<%= link_to "Dec", controller: "articles", action: "filter", month: "December" %>
